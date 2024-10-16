@@ -1,0 +1,83 @@
+<nav class="navbar col-md-12 navbar-expand" style="background-color: #2f5597;">
+    <h3 class="text-light mx-auto">Dashboard</h3>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 text-dark">
+            <ul class="nav flex-column mt-4">
+                <li class="nav-item p-3 labels" [routerLink]="'/addBook'">
+                    <i class="bi bi-plus-lg"></i> Add Book
+                </li>
+                <li class="nav-item p-3 labels" (click)="showDeleteTable()">
+                    <i class="bi bi-x-lg"></i> Delete Book
+                </li>
+                <li class="nav-item p-3 labels" (click)="showViewTable()">
+                    <i class="bi bi-book"></i> View Book
+                </li>
+                <li class="nav-item p-3 labels" [routerLink]="'/addStudent'">
+                    <i class="bi bi-person-plus"></i> Add Student
+                </li>
+                <li class="nav-item p-3 labels" [routerLink]="'/issuebooks'">
+                    <i class="bi bi-bookmark"></i> Issue Book
+                </li>
+                <li class="nav-item p-3 labels">
+                    <i class="bi bi-arrow-left-circle"></i> Return Book
+                </li>
+                <li class="nav-item p-3 labels">
+                    <i class="bi bi-bar-chart"></i> Report
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mt-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">No. Of Books</h5>
+                                <canvas id="barChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">No. Of Books</h5>
+                                <canvas id="pieChart" class="chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <h5>Issued Book Summary</h5>
+                    <table class="table table-success table-bordered">
+                        <thead>
+                            <tr>
+                                <th>ISBN</th>
+                                <th>Book Name</th>
+                                <th>Author</th>
+                                <th>Roll No.</th>
+                                <th>Name</th>
+                                <th>Issued On</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let i of issuedBooks">
+                            <tr>
+                                <td>{{i.isbn}}</td>
+                                <td>{{i.bookName}}</td>
+                                <td>{{i.author}}</td>
+                                <td>{{i.rollNo}}</td>
+                                <td>{{i.sName}}</td>
+                                <td>{{i.issuedOn}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

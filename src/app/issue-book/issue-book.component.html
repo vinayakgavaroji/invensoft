@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2f5597;">
+    <h3 class="text-light mx-auto">Issue Book</h3>
+</nav>
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="col-md-4 my-5">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="issueBookForm" (ngSubmit)="issueBook()">
+                  <div class="form-group">
+                    <label for="book">Select Book:</label>
+                    <select class="form-control" formControlName="isbn">
+                      <option *ngFor="let book of getBooks" [value]="book.isbn">{{ book.name }} - {{ book.author }}</option>
+                    </select>
+                    <div class="text-danger" *ngIf="issueBookForm.controls['isbn'].dirty && issueBookForm.controls['isbn'].touched">
+                      <span class="text-danger" *ngIf="issueBookForm.controls['isbn']?.errors?.['required']">
+                          Choose the book
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="student">Select Student:</label>
+                    <select class="form-control" formControlName="rollNo">
+                      <option *ngFor="let student of getStudents" [value]="student.rollNo">{{ student.name }} - Roll No: {{ student.rollNo }}</option>
+                    </select>
+                    <div class="text-danger" *ngIf="issueBookForm.controls['rollNo'].dirty && issueBookForm.controls['rollNo'].touched">
+                      <span class="text-danger" *ngIf="issueBookForm.controls['rollNo']?.errors?.['required']">
+                          Select the student
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="issuedOn">Issued On:</label>
+                    <input class="form-control" type="date" formControlName="issuedOn">
+                    <div class="text-danger" *ngIf="issueBookForm.controls['issuedOn'].dirty && issueBookForm.controls['issuedOn'].touched">
+                      <span class="text-danger" *ngIf="issueBookForm.controls['issuedOn']?.errors?.['required']">Date is required</span>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary my-1" type="submit">Issue Book</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

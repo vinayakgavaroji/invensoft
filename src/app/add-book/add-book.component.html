@@ -1,0 +1,118 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2f5597;">
+    <h3 class="text-light mx-auto">Add Book</h3>
+</nav>
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="col-md-6 p-1">
+        <form [formGroup]="addBookForm" (ngSubmit)="addBook()">
+            <div class="from-group">
+                <label class="inputLabel" for="isbn">ISBN Number</label>
+                <input class="form-control" type="text" formControlName="isbn">
+                <div class="text-danger" *ngIf="addBookForm.controls['isbn'].dirty && addBookForm.controls['isbn'].touched">
+                    <span class="text-danger" *ngIf="addBookForm.controls['isbn']?.errors?.['required']">
+                        ISBN is required
+                    </span>
+                    <span class="text-danger" *ngIf="addBookForm.controls['isbn']?.errors?.['pattern']">
+                        Invalid ISBN
+                    </span>
+                </div>
+            </div>
+            <div class="from-group">
+                <label class="inputLabel" for="name">Name</label>
+                <input class="form-control" type="text" formControlName="name">
+                <div class="text-danger" *ngIf="addBookForm.controls['name'].dirty && addBookForm.controls['name'].touched">
+                    <span class="text-danger" *ngIf="addBookForm.controls['name']?.errors?.['required']">
+                        Book name is required
+                    </span>
+                    <span class="text-danger" *ngIf="addBookForm.controls['name']?.errors?.['pattern']">
+                        Invalid book name
+                    </span>
+                </div>
+            </div>
+            <div class="from-group">
+                <label class="inputLabelBlack" for="author">Author</label>
+                <input class="form-control" type="text" formControlName="author">
+                <div class="text-danger" *ngIf="addBookForm.controls['author'].dirty && addBookForm.controls['author'].touched">
+                    <span class="text-danger" *ngIf="addBookForm.controls['author']?.errors?.['required']">
+                        Author name is required
+                    </span>
+                    <span class="text-danger" *ngIf="addBookForm.controls['author']?.errors?.['pattern']">
+                        Invalid author name
+                    </span>
+                    <span class="text-danger" *ngIf="addBookForm.controls['author']?.errors?.['maxlength']">
+                        Character should be less then 50.
+                    </span>
+                </div>
+            </div>
+            <div class="from-group">
+                <label class="inputLabel" for="publication">Publication</label>
+                <input class="form-control" type="text" formControlName="publication">
+                <div class="text-danger" *ngIf="addBookForm.controls['publication'].dirty && addBookForm.controls['publication'].touched">
+                    <span class="text-danger" *ngIf="addBookForm.controls['publication']?.errors?.['required']">
+                        Publication is required
+                    </span>
+                    <span class="text-danger" *ngIf="addBookForm.controls['publication']?.errors?.['pattern']">
+                        Invalid publication
+                    </span>
+                    <span class="text-danger" *ngIf="addBookForm.controls['publication']?.errors?.['maxlength']">
+                        Character should be less then 50.
+                    </span>
+                </div>
+            </div>
+            <div class="from-group">
+                <label class="inputLabel" for="details">Details</label>
+                <textarea class="form-control" type="text" formControlName="details"></textarea>
+                <div class="text-danger" *ngIf="addBookForm.controls['details'].dirty && addBookForm.controls['details'].touched">
+                    <span class="text-danger" *ngIf="addBookForm.controls['details']?.errors?.['required']">
+                        Details are required
+                    </span>
+                    <span class="text-danger" *ngIf="addBookForm.controls['details']?.errors?.['maxlength']">
+                        Character should be less then 250.
+                    </span>
+                </div>
+            </div>
+            <div class="from-group">
+                <label class="inputLabel" for="qty">Qty.</label>
+                <input class="form-control" type="number" formControlName="qty">
+                <div class="text-danger" *ngIf="addBookForm.controls['qty'].dirty && addBookForm.controls['qty'].touched">
+                    <span class="text-danger" *ngIf="addBookForm.controls['qty']?.errors?.['required']">
+                        Details are required
+                    </span>
+                    <span class="text-danger" *ngIf="addBookForm.controls['qty']?.errors?.['min']">
+                        should add atleast 1 piece.
+                    </span>
+                    <span class="text-danger" *ngIf="addBookForm.controls['qty']?.errors?.['max']">
+                        Can add upto 5 pieces.
+                    </span>
+                </div>
+            </div>
+            <div class="from-group">
+                <label class="inputLabelBlack" for="price">Price</label>
+                <input class="form-control" type="text" formControlName="price">
+                <div class="text-danger" *ngIf="addBookForm.controls['price'].dirty && addBookForm.controls['price'].touched">
+                    <span class="text-danger" *ngIf="addBookForm.controls['price']?.errors?.['required']">
+                        Enter price
+                    </span>
+                    <span class="text-danger" *ngIf="addBookForm.controls['price']?.errors?.['pattern']">
+                        Invalid price.
+                    </span>
+                </div>
+            </div>
+            <div class="from-group">
+                <label class="inputLabel" for="branch">Branch</label>
+                 <select class="form-control" formControlName="branch">
+                    <option value="IT">IT</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Mechnical">Mechnical</option>
+                 </select>
+            </div>
+            <button [disabled]="!submitted && addBookForm.invalid" class="btn btn-primary form-control my-1" type="submit">Submit</button>
+            <div class="text-success" *ngIf="successMsg; else message">
+                {{ successMsg }}
+              </div>
+  
+              <ng-template #message>
+                <div class="text-danger" *ngIf="errorMsg">{{ errorMsg }}</div>
+              </ng-template>
+        </form>
+    </div>
+</div>

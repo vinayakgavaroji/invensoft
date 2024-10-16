@@ -1,0 +1,28 @@
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+}
+
+.labels {
+    font-weight: bold;
+}
+
+.vh-100 {
+    min-height: 100vh;
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+.bi {
+    margin-right: 10px;
+}
+
+.chart {
+    width: 100% !important;
+    height: 261px !important;
+}

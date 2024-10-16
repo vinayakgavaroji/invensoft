@@ -1,0 +1,24 @@
+.card-header {
+    background-color: #007bff !important;
+}
+
+.card-title {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+.inputLabel {
+    color: red;
+    font-weight: bold;
+}
+.inputLabelBlack {
+    color: black;
+    font-weight: bold;
+}

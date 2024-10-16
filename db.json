@@ -1,0 +1,100 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "isbn": 123456,
+      "name": "The Power of Your Subconscious Mind",
+      "author": "Joseph Murphy",
+      "publication": "Usa american everywhere",
+      "details": "somewhere on earth",
+      "qty": 3,
+      "price": 1599,
+      "branch": "IT"
+    },
+    {
+      "id": "5049",
+      "isbn": "1578",
+      "name": "Jolly",
+      "author": "LLB",
+      "publication": "MYSURU",
+      "details": "Jamkhandi",
+      "qty": 2,
+      "price": "564",
+      "branch": "Mechnical"
+    },
+    {
+      "id": "84de",
+      "isbn": "64315",
+      "name": "JackSparrow",
+      "author": "Johnny Depp",
+      "publication": "California",
+      "details": "India",
+      "qty": 2,
+      "price": "899",
+      "branch": "Civil"
+    },
+    {
+      "id": "7604",
+      "isbn": "789456",
+      "name": "3 Men in boat",
+      "author": "Dr Vinayak Gavaroji",
+      "publication": "Indore Jamkhandi",
+      "details": "Very Good Story",
+      "qty": 2,
+      "price": "899",
+      "branch": "Civil"
+    },
+    {
+      "id": "7f2d",
+      "isbn": "514651",
+      "name": "Joker Of The Day",
+      "author": "Voma",
+      "publication": "Paris",
+      "details": "Very funny",
+      "qty": 5,
+      "price": "1299",
+      "branch": "IT"
+    }
+  ],
+  "students": [
+    {
+      "id": "1",
+      "name": "Vinayak",
+      "rollNo": 951
+    },
+    {
+      "id": "2",
+      "name": "Jack",
+      "rollNo": 102
+    }
+  ],
+  "issuedBooks": [
+    {
+      "id": "1",
+      "isbn": 123456,
+      "bookName": "The Power of Your Subconscious Mind",
+      "author": "Joseph Murphy",
+      "rollNo": 951,
+      "sName": "Vinayak",
+      "issuedOn": "09-09-2024"
+    },
+    {
+      "id": "2",
+      "isbn": 123434,
+      "bookName": "2 States",
+      "author": "Chetan Bhagat",
+      "rollNo": 123,
+      "sName": "Jack",
+      "issuedOn": "04-09-2024"
+    },
+    {
+      "id": "8716",
+      "rollNo": 102,
+      "isbn": 123456,
+      "bookName": "The Power of Your Subconscious Mind",
+      "author": "Joseph Murphy",
+      "sName": "Jack",
+      "issuedOn": "2024-10-07"
+    }
+  ]
+}

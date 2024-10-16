@@ -1,0 +1,33 @@
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-light">
+    <div class="card p-5 shadow-lg col-md-6">
+        <h1 class="text-center header mb-2">Digital Library</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="card border-0">
+                <div class="card-body">
+                    <div class="from-group my-2">
+                        <label class="inputLabel" for="username">Username</label>
+                        <input type="text" class="form-control" formControlName="username">
+                        <div class="text-danger" *ngIf="loginForm.controls['username'].dirty && loginForm.controls['username'].touched">
+                            <span class="text-danger" *ngIf="loginForm.controls['username']?.errors?.['required']">
+                                Username is required
+                            </span>
+                        </div>
+                    </div>
+                    <div class="from-group my-2">
+                        <label class="inputLabel" for="password">Password</label>
+                        <input type="password" class="form-control" formControlName="password">
+                        <div *ngIf="loginForm.controls['password'].dirty && loginForm.controls['password'].touched">
+                            <span class="text-danger" *ngIf="loginForm.controls['password']?.errors?.['required']">
+                                Password is required
+                            </span>
+                            <span class="text-danger" *ngIf="loginForm.controls['password']?.errors?.['min']">
+                                Password should contain minimum of 8 characters
+                            </span>
+                        </div>
+                    </div>
+                    <button [disabled]="!submitted && loginForm.invalid" class="btn btn-primary form-control my-2" type="submit">Login</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

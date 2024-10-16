@@ -1,0 +1,31 @@
+.header {
+    color: #2f5597;
+}
+
+.inputLabel {
+    color: red;
+    font-weight: bold;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+.bg-light {
+    background: linear-gradient(to bottom, #e6f0ff, #cce0ff);
+}
+
+input[type="text"],
+input[type="password"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+button[type="submit"] {
+    background-color: #4472C4;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
